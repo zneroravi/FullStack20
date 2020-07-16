@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day 4</title>
+</head>
+<body>
+ <!-- start form -->
+<form action="">
+
+	 <!-- Creating lable for name input -->
+	<label>Name :- </label>
+	 <!-- taking input from user in text input box -->
+	 <!-- Define type="text" Mean i am taking a text input  -->
+	 <!-- name attribute reference form data after a form is submitted  -->
+	 <!-- placeholder attribute specifies a short hint that describes the expected value of an input field -->
+	 <!-- required attribute is used o specify that the element should be filled -->
+
+	<input type="text" id="name" name="name" placeholder="enter your name" required>
+	<br>
+	<!-- minlengh & maxlength can set input length from user -->
+	<label>Mobile Number:- </label>
+	<input type="text" id="mobile" name="mobile" maxlength="10" minlength="2" placeholder="Enter your Mobile" required>
+	<br>
+	<label>Email:-</label>
+	<input type="email" id="email" name="email" required>
+	<br>
+	<label>city :-</label>
+	<!-- readonly will lock the text box  -->
+	<!-- value:- we can fix input data/predefine if user don`t change it -->
+	<input type="text" name="city" value="new delhi" readonly required>
+	<br>
+	<label>DOB</label>
+	<!-- type date :- it will open a calendar menu when we want to enter a date  -->
+	<input type="date" name="dob" placeholder="23/02/1995" required>
+	<br>
+	<label>Time</label>
+	<!-- type time :- it can set a time ex: meeting time  -->
+	<input type="time" name="dob" placeholder="23/02/1995" required>
+	<br>
+	<label>Gender</label><br>
+	<!-- type Radio  -->
+	<input type="radio" name="gender" value="male" required>
+	<label>Male</label><br>
+	<input type="radio" name="gender" value="female" required>
+	<label>Female</label><br>
+
+	<input type="radio" name="gender" value="other" required>
+	<label>Other</label>
+	<br>
+	<textarea name="text" rows="10" cols="30" required>
+ this is
+	</textarea>
+	<br>
+	<!-- upload a file -->
+	<input type="file" name="image">
+	<br><br>
+	<!-- input checkbox -->
+	<input type="checkbox" name="food1" value="burger">
+	<label>Burger</label><br>
+	<input type="checkbox" name="food2" value="pizza">
+	<label>Pizza</label><br>
+	<input type="checkbox" name="food3" value="noodles">
+	<label>Noodles</label><br>
+	<input type="submit" name="submit" value="Click Here">
+	<button type="reset">Reset</button>
+
+</form>
+
+<br><br>
+<form>
+	<label>Username</label>
+	<input type="text" name="password" placeholder="enter Username">
+	<br><label>Password</label>
+	<input type="password" name="password" placeholder="enter password">
+	<br><br>
+	<!-- dropdown menu -->
+	<select name="subject">
+		<option>Select</option>
+		<option value="c++">C++</option>
+		<option value="java">java</option>
+		<option value="php">PHP</option>
+		<option value="ruby">Ruby</option>
+		<option value="html">HTML</option>
+		<option value="python">PYTHON</option>		
+	</select>
+
+	<br><br>
+	<input type="checkbox" name="agree" required="">
+	<label>I accept all conditions.</label>
+	<br>
+	<input type="submit" name="submit">
+</form>
+
+
+</body>
+</html>
