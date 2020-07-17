@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day5 JavaScript</title>
+	<script type="text/javascript">
+		function head1() {
+			document.getElementById('h2').style.color = 'red';
+			document.getElementById('h2').style.fontSize = '40px';
+		}
+		function head2() {
+			document.getElementById('h2').style.color = 'black';
+			document.getElementById('h2').style.fontSize = '30px';
+		}
+		function para1(){
+			document.getElementById('p2').innerHTML = 'Hello class, Change para';
+		}
+
+		function sum(){
+
+		var a = 5;
+		var b = 2;
+		var c = (a+b)*10;
+		var d = "hello i m var";
+		var e = 5+5+6;
+
+		//var fname = "Ravi";
+		//var lname = "Goswami";
+
+		// js array   
+		var students =  ["ravi", "pankaj", "anmol", "pranav"];
+		students.push("amit");
+
+		var gstudents = new Array("priyanka", "subhra", "anjali");
+
+		gstudents[3] = "Monika";
+		gstudents[4] = "bhavana";
+
+
+
+			//document.getElementById('p3').innerHTML = d;
+			document.getElementById('p3').innerHTML = gstudents.length;
+		}
+	</script>
+
+</head>
+<body>
+<!--  Defining JS in element --> 
+<!-- <h1 id="h1">this is heading</h1>
+<p id="p1">This is text 1</p>
+<button type="button" onclick='document.getElementById("p1").innerHTML = "This is another text"'>Click here to call JS</button><br><br>
+<button type="button" onclick='document.getElementById("h1").innerHTML = "hello class"'>Click here for Heading</button> -->
+
+<h1 id="h2">Normal heading</h1>
+<p id="p2">para 1</p>
+<button type="button" onmouseout="head1()">Action for H2</button> <br> <br>
+<button type="button" onmouseover="head2()">Re for H2</button> <br> <br>
+<button type="button" onclick="para1()">Action for P2</button> <br> <br>
+
+<p id="p3"></p>
+<button onclick="sum()">For Addition</button> <br> <br>
+</body>
+</html>
