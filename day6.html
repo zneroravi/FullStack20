@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>day5</title>
+	<script type="text/javascript">
+		function takeinput() {
+					var name = document.getElementById('name').value;
+					var age = document.getElementById('age').value;
+					document.getElementById('dispname').innerHTML = name;
+					document.getElementById('dispage').innerHTML = age;
+				}	
+		function cal() {
+			var a,b,c;
+				a = Number(document.getElementById('num1').value);
+				b = Number(document.getElementById('num2').value);
+				c = (a+b);
+				document.getElementById('dispans').innerHTML = c;
+			}	
+
+		function al() {
+			//alert("hello class");
+			var a = Number(prompt("enter num 1"));
+			var b = Number(prompt("enter num 2"));
+			var c = (a+b);
+			document.getElementById('dispans2').innerHTML = c;
+		}
+		// if else conditions
+		function cond() {
+			var a = Number(document.getElementById('num3').value);
+			if ( 5<a ) {
+				document.getElementById('dispans3').innerHTML = "input is greater than 5";
+			} else if (a==5) {
+				document.getElementById('dispans3').innerHTML = "input is 5";
+			} else if (5>a){
+				document.getElementById('dispans3').innerHTML = "input is lesser than 5";
+			} else {
+				document.getElementById('dispans3').innerHTML = "input is not a number";
+			}
+		}
+		// switch case
+
+		function switchcase() {
+			var num = Number(document.getElementById('num3').value);
+
+			switch(num){
+				case 1: num = "monday";
+				break;
+				case 2: num = "tuesday";
+				break;
+			}
+			document.getElementById('dispans3').innerHTML = "input number is " + num;
+		} 
+
+		// for loop
+
+		function forloop() {
+			var i;
+			for (i=0; i<=5; i++){
+				// define array for HW; do it your self
+				document.getElementById('dispans3').innerHTML = i;
+			}
+		}
+	</script>
+</head>
+<body>
+<label>Enter Name</label><br>
+<input type="text" name="name" id="name"> <br>
+<label>Enter age</label>
+<input type="text" name="age" id="age"> <br>
+<button onclick="takeinput()">Click here</button>
+<p id="dispname"></p> <br>
+<p id="dispage"></p>
+
+
+<label>Enter 1st number</label><br>
+<input type="number" name="num1" id="num1"> <br>
+
+<label>Enter 2nd num</label>
+<input type="number" name="num2" id="num2"> <br>
+<button onclick="cal()">Click here</button>
+<p id="dispans"></p> <br>
+<button onclick="al()">alert</button>
+<p id="dispans2"></p>
+<br><br><br>
+<input type="text" id="num3">
+<button onclick="forloop()">check</button>
+<p id="dispans3"></p>
+</body>
+</html>
+
+
+
+
+
+
+
