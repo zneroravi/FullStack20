@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day 7 JS</title>
+
+	<script type="text/javascript">
+		
+	function dowhileloop() {
+		var i=1;
+		var num = ""
+		 do{
+
+		 	num += "<br> number is" + i;
+		 	i++;
+		 }
+
+		 while(i==1);
+		 document.getElementById("text1").innerHTML = num;
+	}
+	function form1() {
+
+		var a = document.getElementById('name').value;
+		var b = document.getElementById('pass').value;
+		var text1 = "Name is blank";
+
+		//var a = document.forms["form1"]["name"].value;
+
+		if (a == ""){
+			//alert("Name must be something");
+			document.getElementById('error').innerHTML = text1;
+
+		} else if (b =="") {
+
+			//alert("password must be something");
+			document.getElementById('error').innerHTML = "password is blank";
+			
+		}
+
+	}
+
+
+
+	</script>
+</head>
+<body>
+<!-- 	<p id="text1"></p>
+<button onclick="dowhileloop()">click here</button> -->
+<form>
+	<label>name:</label>
+	<input type="text" name="name" id="name"> <br>
+	<label>password:</label>
+	<input type="password" name="pass" id="pass"> <br>
+	<p id="error"></p>
+	<button onclick="form1()">form click</button>
+	<button type="reset" >reset</button>
+	
+</form>
+</body>
+</html>
