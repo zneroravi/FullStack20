@@ -4,7 +4,8 @@ $ab = 0 ;
  while ($ab <5) {
  	//echo "number is $ab <br/>";
  	$ab++;
- }
+ } 
+
 
 //do while loop
  $bc=1;

@@ -40,9 +40,14 @@ switch ($num) {
 echo "<br>";
 
 // for loop
- for ($i=0; $i < 5; $i++) { 
+ for ($i=1; $i < 7; $i++) { 
  	echo "$i";
- }
+ 	
+ } //echo $i;
+
+
+
+
 
 
  ?>
