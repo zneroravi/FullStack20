@@ -1,9 +1,18 @@
 <?php
 
+if (isset($_POST['submit'])){
+$name = $_POST['name'];
+$email = $_POST['email'];
+$mobile = $_POST['mobile'];
+$passw = $_POST['pass'];
+
+}
+
 $server   = "localhost";
 $user = "root";
 $pass = "";
 $db = "fs20";
+
 
 $sqlconn = new mysqli($server, $user, $pass, $db);
 
@@ -12,13 +21,14 @@ if ($sqlconn->connect_error){
 	die($sqlconn->connect_error);
 } 
 
-$sql = "CREATE TABLE userlogin (name VARCHAR(30),email VARCHAR(30),mobile INT(13),pass VARCHAR(40));";
+$sql = "INSERT INTO userlogin (name, email, mobile, pass) VALUES ('$name', '$email', '$mobile', '$passw');";
 
 if ($sqlconn->query($sql) === TRUE) {
-	echo "TABLE created";
+	echo "data inserted";
 } else {
 	echo "error: ".$sqlconn->error;
 }
+
 
 $sqlconn->close();
 ?>
