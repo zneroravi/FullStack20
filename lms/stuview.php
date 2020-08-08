@@ -33,6 +33,7 @@
       <th scope="col">Profession</th>
       <th scope="col">Email</th>
       <th scope="col">Mobile</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
 <?php 
@@ -68,6 +69,7 @@ if ($data->num_rows>0) {
       <td><?php echo $row["prof"]; ?></td>
       <td><?php echo $row["email"]; ?></td>
       <td><?php echo $row["mobile"]; ?></td>
+      <td><a href="delstu.php?email=<?php echo $row["email"]; ?>"> <button type="button" class="btn btn-danger">Delete</button></a></td>
     </tr>
     <?php
         }
