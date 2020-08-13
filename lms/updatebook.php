@@ -1,5 +1,30 @@
 <?php
 
+$bookid = $_GET['book'];
+
+
+$server   = "localhost";
+$user = "root";
+$pass = "";
+$db = "lms";
+//$num ="1";
+
+$sqlconn = new mysqli($server, $user, $pass, $db);
+
+if ($sqlconn->connect_error){
+    echo "error";
+    die($sqlconn->connect_error);
+} 
+$sql = "SELECT * FROM books where bookid=$bookid;";
+
+$data = $sqlconn->query($sql);
+
+
+if ($data->num_rows>0) {
+    while ($row = $data->fetch_assoc()) {
+      //  echo $row["bookname"]." ".$row["author"]." ".$row["publication"]." ".$row["price"]."<br/>";
+      // $num;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,42 +57,54 @@
             </div>
         </div>
     </nav>
-    <form action="updatef.php" method="POST">
+    <form action="updatebookf.php" method="POST">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Book Name</label>
-      <input type="text" class="form-control" id="inputEmail4" placeholder="Book Name" name="book">
+      <input type="text" class="form-control" id="inputEmail4" value="<?php echo $row["bookname"]; ?>" placeholder="Book Name" name="book">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Author</label>
-      <input type="text" value="<?php ?>" class="form-control" id="inputPassword4" placeholder="Author" name="author">
+      <input type="text" value="<?php echo $row["author"]; ?>" class="form-control" id="inputPassword4" placeholder="Author" name="author">
     </div>
   </div>
   <div class="form-group col-md-6">
       <label for="inputEmail4">Publication</label>
-      <input type="text" class="form-control" id="inputEmail4" placeholder="Publication" name="publication">
+      <input type="text" class="form-control" value="<?php echo $row["publication"]; ?>" id="inputEmail4" placeholder="Publication" name="publication">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Price</label>
-      <input type="text" class="form-control" id="inputPassword4" placeholder="Price" name="price">
+      <input type="text" class="form-control" value="<?php echo $row["price"]; ?>" id="inputPassword4" placeholder="Price" name="price">
     </div>
   </div>
   <div class="form-group col-md-6">
       <label for="inputPassword4">Year</label>
-      <input type="text" class="form-control" id="inputPassword4" placeholder="Year" name="year">
+      <input type="text" class="form-control" id="inputPassword4" value="<?php echo $row["year"]; ?>" placeholder="Year" name="year" >
     </div>
     <div class="form-group col-md-6">
       <label for="inputState">Cat</label>
       <select id="inputState" class="form-control" name="cat">
-        <option selected>Choose...</option>
+        <option value="<?php echo $row["cat"]; ?>" selected><?php echo $row["cat"]; ?></option>
         <option value="tech">Technology</option>
         <option value="science">Science</option>
         <option value="gk">GK</option>
         <option value="story">Story</option>
         <option value="fic">Fiction</option>
       </select>
-    </div><br/>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="inputPassword4">BookId</label>
+      <input type="text" class="form-control" id="inputPassword4" value="<?php echo $row["bookid"]; ?>" placeholder="Year" name="bookid" Readonly>
+    </div><br/><br/>
+<?php
+}
 
+} else {
+    echo "error: ".$sqlconn->error;
+}
+
+$sqlconn->close();
+?>
     
   &nbsp;&nbsp;&nbsp;<button type="submit" name="submit" class="btn btn-primary">Update</button>
 </form>

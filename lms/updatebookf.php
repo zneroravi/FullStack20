@@ -2,6 +2,7 @@
 
 if (isset($_POST['submit'])) {
 
+$bookid = $_POST["bookid"];
 $book     = $_POST["book"];
 $author      = $_POST["author"];
 $publication      = $_POST["publication"];
@@ -23,10 +24,10 @@ if ($sqlconn->connect_error){
   die($sqlconn->connect_error);
 } 
 
-$sql = "UPDATE INTO books SET (bookname, author, publication, price, year, cat) VALUES ('$book', '$author', '$publication', '$price', '$year', '$cat');";
+$sql = "UPDATE books SET  bookname='$book', author='$author', publication='$publication', price='$price', year='$year', cat='$cat' WHERE bookid='$bookid';";
 
 if ($sqlconn->query($sql) === TRUE) {
-  echo "data inserted";
+  echo "data UPDATED";
   header('Refresh: 2; URL=book.php');
 } else {
   echo "error: ".$sqlconn->error;
