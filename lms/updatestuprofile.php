@@ -20,7 +20,7 @@ include 'userdata.php';
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="dashstu.php">Library management system</a>
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Library management system</a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -39,69 +39,31 @@ include 'userdata.php';
         </div>
     </nav>
 
-<h1>Hello <?php echo $name; ?></h1>
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Book Name</th>
-      <th scope="col">Author</th>
-      <th scope="col">Publication</th>
-      <th scope="col">Cat</th>
-      <th scope="col">Year</th>
-      <th scope="col">Action</th>
-      </tr>
-  </thead>
-  <?php 
-
-$server   = "localhost";
-$user = "root";
-$pass = "";
-$db = "lms";
-
-
-$sqlconn = new mysqli($server, $user, $pass, $db);
-
-if ($sqlconn->connect_error){
-    echo "error";
-    die($sqlconn->connect_error);
-} 
-$sql = "SELECT * FROM books;";
-
-$data = $sqlconn->query($sql);
-
-
-if ($data->num_rows>0) {
-    while ($row = $data->fetch_assoc()) {
-       // echo $row["email"]." ".$row["regno"]." ".$row["name"]." ".$row["mobile"]."<br/>";
-      // $num;
-?>
-  <tbody>
-    <tr>
-      <th scope="row"><?php echo $row["bookid"]; ?></th>
-      <td><?php echo $row["bookname"]; ?></td>
-      <td><?php echo $row["author"]; ?></td>
-      <td><?php echo $row["publication"]; ?></td>
-      <td><?php echo $row["year"]; ?></td>
-      <td><?php echo $row["cat"]; ?></td>
-      <td><a href="updatebook.php?book=<?php echo $row["bookid"]; ?>"><button type="button" class="btn btn-success">Issue</button></td>
-
-    </tr>
-  </tbody>
-      <?php
-        }
-
-} else {
-    echo "error: ".$sqlconn->error;
-}
-
-$sqlconn->close();
-?>
-</table>
-
-
-
-
+<form action="updatestudef.php" method="POST">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Registration Number</label>
+      <input type="text" class="form-control" id="inputEmail4" value="<?php echo $regno; ?>" placeholder="Book Name" name="book" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Name</label>
+      <input type="text" value="<?php echo $name; ?>" class="form-control" id="inputPassword4" placeholder="Author" name="author">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+      <label for="inputEmail4">Gender</label>
+      <input type="text" class="form-control" value="<?php echo $gender; ?>" id="inputEmail4" placeholder="Publication" name="publication" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Prof</label>
+      <input type="text" class="form-control" value="<?php echo $prof; ?>" id="inputEmail4" placeholder="Publication" name="publication">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Mobile Number</label>
+      <input type="text" class="form-control" value="<?php echo $mobile; ?>" id="inputEmail4" placeholder="Publication" name="publication">
+    </div>
+<button type="button" class="btn btn-danger">Update Details</button>
+</form>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

@@ -46,7 +46,7 @@ include 'userdata.php';
   <li class="list-group-item">Profession : <?php echo $prof; ?></li>
   <li class="list-group-item">Mobile: <?php echo $mobile; ?></li>
 </ul>
-<button type="button" class="btn btn-danger">Update Details</button>
+<button type="button" class="btn btn-danger" onclick="window.location.href='updatestuprofile.php';">Update Details</button>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
