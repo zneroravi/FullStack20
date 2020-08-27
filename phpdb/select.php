@@ -19,7 +19,7 @@ $sql = "SELECT * FROM userdata;";
 $data = $sqlconn->query($sql);
 
 
-if ($data->num_rows>5) {
+if ($data->num_rows>0) {
 	while ($row = $data->fetch_assoc()) {
 		echo $row["email"]." ".$row["regno"]." ".$row["name"]." ".$row["mobile"]."<br/>";
 
